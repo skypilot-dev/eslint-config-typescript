@@ -75,7 +75,10 @@ module.exports = {
     'curly': 'error',
     'eqeqeq': ['error', 'always'],
     'import/order': ['warn',
-      { 'groups': ['builtin', 'external', 'internal', 'parent', 'sibling'] },
+      {
+        'alphabetize': { order: 'asc', caseInsensitive: true },
+        'groups': ['builtin', 'external', 'internal', 'parent', 'sibling'],
+      },
     ],
     'import/prefer-default-export': 'off',
     'indent': 'off',
