@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.test.[jt]s'],
+      files: ['**/*.test.[jt]s', 'jest.setup.js'],
       env: {
         jest: true,
       },
