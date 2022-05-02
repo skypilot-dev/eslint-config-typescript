@@ -27,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     timeout-minutes: 10
 
@@ -56,7 +56,7 @@ jobs:
         if: success()
         run: |
           if [[ $(yarn --silent spqr-option 'release.check-code') == 'true' ]] ; then
-            yarn run typecheck
+            yarn run check-types
           fi
       - name: Lint
         if: success()
