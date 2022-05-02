@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.test.[jt]s'],
+      files: ['**/*.test.[jt]s', 'jest.setup.js'],
       env: {
         jest: true,
       },
@@ -43,9 +43,6 @@ module.exports = {
     'jest',
   ],
   rules: {
-    // Possible errors
-    'no-console': 'warn',
-
     // Best practices
     '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
     '@typescript-eslint/no-empty-function': 'warn',
@@ -63,7 +60,7 @@ module.exports = {
 
     'arrow-body-style': ['warn', 'as-needed'],
     'arrow-parens': 'off',
-    'brace-style': ['warn', '1tbs'],
+    'brace-style': ['warn', 'stroustrup', { allowSingleLine: true }],
     'camelcase': ['warn', { properties: 'never' }],
     'comma-dangle': ['warn', {
       arrays: 'always-multiline',
@@ -75,7 +72,10 @@ module.exports = {
     'curly': 'error',
     'eqeqeq': ['error', 'always'],
     'import/order': ['warn',
-      { 'groups': ['builtin', 'external', 'internal', 'parent', 'sibling'] },
+      {
+        'alphabetize': { order: 'asc', caseInsensitive: true },
+        'groups': ['builtin', 'external', 'internal', 'parent', 'sibling'],
+      },
     ],
     'import/prefer-default-export': 'off',
     'indent': 'off',
@@ -89,6 +89,8 @@ module.exports = {
       ignoreTemplateLiterals: true,
       ignoreUrls: true,
     }],
+    'new-parens': ['error', 'always'],
+    'no-console': ['warn', { allow: ['error', 'info', 'warn'] }],
     'no-multiple-empty-lines': ['warn', { max: 2, maxBOF: 0, maxEOF: 0 }],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-dupe-class-members': 'off',

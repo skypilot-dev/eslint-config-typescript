@@ -20,7 +20,7 @@
   "license": "ISC",
   "author": {
     "name": "William Thorsen",
-    "email": "wthorsen@skypilot.dev"
+    "email": "william@thorsen.dev"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
