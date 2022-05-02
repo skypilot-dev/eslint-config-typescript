@@ -9,9 +9,6 @@
     "shared",
     "typescript"
   ],
-  "engines": {
-    "node": ">=14.17.0"
-  },
   "homepage": "https://github.com/skypilot-dev/eslint-config-typescript#readme",
   "bugs": {
     "url": "https://github.com/skypilot-dev/eslint-config-typescript/issues"
@@ -31,10 +28,10 @@
     "/lib"
   ],
   "scripts": {
+    "build": "rm -rf lib && mkdir -p lib && cp src/index.js lib/",
     "check-ci": "yarn run check-code && yarn run build",
     "check-code": "yarn run check-types && yarn run lint --quiet && yarn test",
     "check-types": "tsc",
-    "build": "rm -rf lib && mkdir -p lib && cp src/index.js lib/",
     "compile-ts": "babel ./src --out-dir ./lib --extensions .ts --ignore '**/__tests__/*' --ignore '**/*.d.ts' && yarn run generate-typings",
     "generate-typings": "tsc --project tsconfig.generate-typings.json",
     "lint": "eslint --cache '**/*.{js,ts}'",
@@ -44,6 +41,7 @@
     "test:all": "jest --config jest.config.js",
     "test:int": "jest --config jest.integration.config.js"
   },
+  "dependencies": {},
   "devDependencies": {
     "@skypilot/toolchain": "^5.2.4-next.6",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
@@ -62,6 +60,9 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.1.5",
     "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": ">=14.17.0"
   },
   "publishConfig": {
     "access": "restricted"
