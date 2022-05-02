@@ -57,7 +57,7 @@ jobs:
         if: success()
         run: |
           if [[ $(yarn --silent spqr-option 'prerelease.check-code') == 'true' ]] ; then
-            yarn run typecheck
+            yarn run check-types
           fi
       - name: Lint
         if: success()

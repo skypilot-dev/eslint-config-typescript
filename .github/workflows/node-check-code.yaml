@@ -41,7 +41,7 @@ jobs:
           yarn install --frozen-lockfile --production=false
           yarn add @skypilot/quick-release --production=false
       - name: Check types
-        run: yarn run typecheck
+        run: yarn run check-types
       - name: Lint
         run: yarn run lint --no-cache --quiet
       - name: Test
