@@ -9,6 +9,9 @@
     "shared",
     "typescript"
   ],
+  "engines": {
+    "node": ">=14.17.0"
+  },
   "homepage": "https://github.com/skypilot-dev/eslint-config-typescript#readme",
   "bugs": {
     "url": "https://github.com/skypilot-dev/eslint-config-typescript/issues"
