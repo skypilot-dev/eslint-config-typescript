@@ -43,9 +43,6 @@ module.exports = {
     'jest',
   ],
   rules: {
-    // Possible errors
-    'no-console': 'warn',
-
     // Best practices
     '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
     '@typescript-eslint/no-empty-function': 'warn',
@@ -93,6 +90,7 @@ module.exports = {
       ignoreUrls: true,
     }],
     'new-parens': ['error', 'always'],
+    'no-console': ['warn', { allow: ['error', 'info', 'warn'] }],
     'no-multiple-empty-lines': ['warn', { max: 2, maxBOF: 0, maxEOF: 0 }],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-dupe-class-members': 'off',
