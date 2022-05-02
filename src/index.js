@@ -92,6 +92,7 @@ module.exports = {
       ignoreTemplateLiterals: true,
       ignoreUrls: true,
     }],
+    'new-parens': ['error', 'always'],
     'no-multiple-empty-lines': ['warn', { max: 2, maxBOF: 0, maxEOF: 0 }],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-dupe-class-members': 'off',
